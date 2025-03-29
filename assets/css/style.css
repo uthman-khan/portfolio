@@ -885,6 +885,11 @@ article { display: none; }
     gap: 20px;
 }
 
+.blog-posts-list > *{
+    border: 2px dotted rgb(110, 110, 97) !important;
+    border-radius: 17px;
+    background-color: #302f2f;
+}
 .blog-posts-item > a {
     position: relative;
     background: var(--border-gradient-onyx);
