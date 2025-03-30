@@ -1554,6 +1554,7 @@ textarea.form-input {
 .project-item {
     background-color: var(--card-bg);
     border: 1px solid var(--border-color);
+    border-radius: 12px;
 }
 
 .project-item:hover {
