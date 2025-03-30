@@ -56,6 +56,9 @@
     --card-bg: #ffffff;
     --shadow-color: rgba(0, 0, 0, 0.1);
     --hover-bg: #f8f9fa;
+    --scrollbar-track: #f0f0f0;
+    --scrollbar-thumb: #c0c0c0;
+    --scrollbar-thumb-hover: #a0a0a0;
 }
 
 [data-theme="dark"] {
@@ -83,6 +86,9 @@
     --light-gray: hsl(0, 0%, 84%);
     --light-gray70: hsla(0, 0%, 84%, .7);
     --bittersweet-shimmer: hsl(0, 43%, 51%);
+    --scrollbar-track: #2d2d2d;
+    --scrollbar-thumb: #404040;
+    --scrollbar-thumb-hover: #505050;
 }
 
 *, *::before, *::after {
@@ -224,7 +230,7 @@ article { display: none; }
 }
 
 .has-scrollbar::-webkit-scrollbar-track {
-    background: var(--bg-secondary);
+    background: var(--scrollbar-track);
     border-radius: 5px;
 }
 
@@ -1080,27 +1086,20 @@ textarea.form-input {
     transition: var(--transition1);
 }
 
-    .form-btn::before {
-        content: '';
-        position: absolute;
-        inset: 1px;
-        background: var(--bg-gradient-jet);
-        border-radius: inherit;
-        z-index: -1;
-        transition: var(--transition1);
-    }
+.form-btn i {
+    font-size: 16px;
+}
 
-    .form-btn ion-icon { font-size: 16px; }
-    .form-btn:hover { background: var(--bg-gradient-yellow1); }
-        .form-btn::before { background: var(--bg-gradient-yellow2); }
+.form-btn:hover { background: var(--bg-gradient-yellow1); }
+.form-btn::before { background: var(--bg-gradient-yellow2); }
 
-    .form-btn:disabled {
-        opacity: .7;
-        cursor: not-allowed;
-    }
+.form-btn:disabled {
+    opacity: .7;
+    cursor: not-allowed;
+}
 
-        .form-btn:disabled:hover { background: var(--border-gradient-onyx); }
-            .form-btn:disabled:hover::before { background: var(--bg-gradient-jet); }
+.form-btn:disabled:hover { background: var(--border-gradient-onyx); }
+.form-btn:disabled:hover::before { background: var(--bg-gradient-jet); }
 
 /*MEDIA QUERIES*/
 
@@ -1431,18 +1430,27 @@ textarea.form-input {
 
 @media (min-width: 1250px) {
 
-    body::-webkit-scrollbar { width: 20px; }
-    body::-webkit-scrollbar-track { background: var(--smoky-black); }
-
-    body::-webkit-scrollbar-thumb {
-        border: 5px solid var(--smoky-black);
-        background: hsla(0, 0%, 100%, .1);
-        border-radius: 20px;
-        box-shadow: inset 1px 1px 0 hsla(0, 0%, 100%, .11), inset -1px -1px 0 hsla(0, 0%, 100%, .11);
+    body::-webkit-scrollbar { 
+        width: 20px; 
+    }
+    
+    body::-webkit-scrollbar-track { 
+        background: var(--scrollbar-track);
     }
 
-    body::-webkit-scrollbar-thumb:hover { background: hsla(0, 0%, 100%, .15); }
-    body::-webkit-scrollbar-button { height: 60px; }
+    body::-webkit-scrollbar-thumb {
+        background: var(--scrollbar-thumb);
+        border: 5px solid var(--scrollbar-track);
+        border-radius: 20px;
+    }
+
+    body::-webkit-scrollbar-thumb:hover { 
+        background: var(--scrollbar-thumb-hover);
+    }
+    
+    body::-webkit-scrollbar-button { 
+        height: 60px; 
+    }
 
     .sidebar, article { width: auto; }
 
