@@ -381,13 +381,12 @@ article { display: none; }
     justify-content: flex-start;
     align-items: center;
     gap: 15px;
-    padding-bottom: 4px;
+    padding-bottom: 10px;
     padding-left: 7px;
 }
-
 .social-item .social-link {
     color: var(--text-secondary);
-    font-size: 18px;
+    font-size: 25px;
 }
 
     .social-item .social-link:hover { color: var(--accent-color); }
